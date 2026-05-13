@@ -12,6 +12,7 @@ export type Listing = {
   reviewer: string;
   topPick?: boolean;
   suspended?: boolean;
+  sponsored?: boolean;
 };
 
 const PILL_STYLES: Record<Listing["pillKind"], string> = {
