@@ -239,13 +239,19 @@ const ICONS: Record<string, IconDef> = {
 };
 
 import darkModePhoto from "@/assets/dark-mode.png";
+import coldStartPhoto from "@/assets/cold-start.png";
+
+const PHOTO_OVERRIDES: Record<string, string> = {
+  "dark-mode": darkModePhoto,
+  "cold-start": coldStartPhoto,
+};
 
 export function PixelIcon({ id, size = 110 }: { id: string; size?: number }) {
-  if (id === "dark-mode") {
+  if (PHOTO_OVERRIDES[id]) {
     return (
       <img
-        src={darkModePhoto}
-        alt="Dark Mode"
+        src={PHOTO_OVERRIDES[id]}
+        alt={id}
         width={size}
         height={size}
         style={{ display: "block", objectFit: "cover", width: size, height: size }}
