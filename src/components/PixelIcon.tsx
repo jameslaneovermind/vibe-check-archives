@@ -238,7 +238,21 @@ const ICONS: Record<string, IconDef> = {
   },
 };
 
+import darkModePhoto from "@/assets/dark-mode.png";
+
 export function PixelIcon({ id, size = 110 }: { id: string; size?: number }) {
+  if (id === "dark-mode") {
+    return (
+      <img
+        src={darkModePhoto}
+        alt="Dark Mode"
+        width={size}
+        height={size}
+        style={{ display: "block", objectFit: "cover", width: size, height: size }}
+        draggable={false}
+      />
+    );
+  }
   const def = ICONS[id];
   if (!def) {
     return (
