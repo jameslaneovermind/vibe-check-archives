@@ -11,7 +11,7 @@ export function Header() {
         className="w-full border-b border-[#1B4332] shadow-[inset_0_-1px_0_rgba(0,0,0,0.2)]"
       >
         <div className="mx-auto max-w-[1200px] px-4 py-3 flex items-center gap-6">
-          <Link to="/" className="flex items-center no-underline hover:no-underline">
+          <Link to="/" className="flex items-center gap-2 no-underline hover:no-underline">
             <img
               src={vibeLogo}
               alt="Vibe Check"
@@ -19,6 +19,12 @@ export function Header() {
               style={{ filter: "drop-shadow(1px 1px 0 rgba(0,0,0,0.35))" }}
               draggable={false}
             />
+            <span
+              className="text-white/80 text-[10px] px-1 border border-white/40 rounded-sm"
+              style={{ fontFamily: "var(--font-sans)" }}
+            >
+              .com
+            </span>
           </Link>
 
           <nav className="flex items-center gap-4 ml-4">
