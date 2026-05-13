@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Minus, Square, X } from "lucide-react";
+import xpTaskbar from "@/assets/xp-taskbar.png";
 
 const CHROME_HEIGHT = 26 + 22 + 38 + 28 + 22; // title + menu + toolbar + address + links = 136
 const STATUS_HEIGHT = 22;
