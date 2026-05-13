@@ -149,6 +149,7 @@ function Index() {
 
         <main className="flex-1">
           <div className="mx-auto max-w-[1200px] px-4">
+            <BannerAd />
             <Hero />
             <CategoryBar />
             <BestOf />
@@ -157,9 +158,10 @@ function Index() {
               <div>
                 <div className="flex items-center justify-between mb-1.5 px-0.5">
                   <h2
-                    className="text-[16px] font-bold text-[#1B4332]"
+                    className="text-[16px] font-bold text-[#1B4332] flex items-center gap-1.5"
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
+                    <RssBadge />
                     Recent Activity — Listings near you
                   </h2>
                   <div className="text-[11px] text-[#666]">
@@ -184,6 +186,19 @@ function Index() {
               </div>
 
               <Sidebar />
+            </div>
+
+            {/* Inline mini footer strip — period accuracy */}
+            <div className="mt-4 pt-2 border-t border-[#DDD] text-center text-[11px] text-[#666]">
+              {["About", "Help", "Privacy", "Terms", "Site Map", "RSS", "Mobile"].map((l, i, a) => (
+                <span key={l}>
+                  <a href="#" className="!text-[#666]">{l}</a>
+                  {i < a.length - 1 && <span className="mx-2 text-[#CCC]">|</span>}
+                </span>
+              ))}
+              <div className="text-[10px] text-[#999] mt-1 italic">
+                Page generated in 0.0421 seconds
+              </div>
             </div>
           </div>
         </main>
