@@ -50,10 +50,10 @@
   --shadow-w2-star: 1px 1px 0 rgba(0,0,0,0.25);
 
   --gradient-nav: linear-gradient(to right, #2D6A4F 0%, #52B788 100%);
-  --gradient-button: linear-gradient(to bottom, #7DD3A8 0%, #52B788 49%, #3FA372 50%, #2D6A4F 100%);
-  --gradient-button-hover: linear-gradient(to bottom, #8FE0B5 0%, #5EC396 49%, #4BB082 50%, #357A5C 100%);
+  --gradient-button: linear-gradient(to bottom, #8FE5B8 0%, #4FBE8A 48%, #2E9E66 52%, #1F6B47 100%);
+  --gradient-button-hover: linear-gradient(to bottom, #A4F0C7 0%, #5BCC97 48%, #38AE74 52%, #245733 100%);
   --gradient-bevel: linear-gradient(to bottom, #FFFFFF 0%, #F0F0F0 100%);
-  --gradient-search-btn: linear-gradient(to bottom, #6BC79A 0%, #52B788 50%, #3FA372 51%, #2D6A4F 100%);
+  --gradient-search-btn: linear-gradient(to bottom, #7AD8A8 0%, #4FBE8A 49%, #2E9E66 51%, #1F6B47 100%);
 }
 
 :root {
