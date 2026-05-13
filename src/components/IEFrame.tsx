@@ -219,13 +219,14 @@ export function IEFrame({ children }: { children: ReactNode }) {
 
       {/* Scrollable browser viewport */}
       <main
-        className="fixed inset-x-0 overflow-y-auto bg-[#F0F0F0] z-10"
+        className="fixed inset-x-0 overflow-y-auto z-10"
         style={{
           top: CHROME_HEIGHT,
           bottom: STATUS_HEIGHT + TASKBAR_HEIGHT,
           borderLeft: "1px solid #0831D9",
           borderRight: "1px solid #0831D9",
           fontFamily: "Verdana, Tahoma, sans-serif",
+          background: "#FAF6EC",
         }}
       >
         {children}
