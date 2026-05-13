@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { CategoryBar } from "@/components/CategoryBar";
 import { ListingCard, type Listing } from "@/components/ListingCard";
 import { Sidebar } from "@/components/Sidebar";
+import { IEFrame } from "@/components/IEFrame";
 
 export const Route = createFileRoute("/")({
   component: Index,
