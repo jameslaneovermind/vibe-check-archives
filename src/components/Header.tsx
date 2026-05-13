@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Star, Search } from "lucide-react";
+import { Search } from "lucide-react";
+import vibeLogo from "@/assets/vibe-check-logo.png";
 
 export function Header() {
   return (
@@ -10,23 +11,14 @@ export function Header() {
         className="w-full border-b border-[#1B4332] shadow-[inset_0_-1px_0_rgba(0,0,0,0.2)]"
       >
         <div className="mx-auto max-w-[1200px] px-4 py-3 flex items-center gap-6">
-          <Link to="/" className="flex items-center gap-2 no-underline hover:no-underline">
-            <Star className="w-5 h-5 fill-[#FFB800] stroke-[#FFB800] drop-shadow-[1px_1px_0_rgba(0,0,0,0.3)]" />
-            <span
-              className="text-white font-bold text-2xl"
-              style={{
-                fontFamily: "var(--font-serif)",
-                textShadow: "1px 1px 0 rgba(0,0,0,0.35)",
-              }}
-            >
-              Vibe Check
-            </span>
-            <span
-              className="text-white/80 text-[10px] ml-1 px-1 border border-white/40 rounded-sm"
-              style={{ fontFamily: "var(--font-sans)" }}
-            >
-              .com
-            </span>
+          <Link to="/" className="flex items-center no-underline hover:no-underline">
+            <img
+              src={vibeLogo}
+              alt="Vibe Check"
+              className="h-8 w-auto select-none"
+              style={{ filter: "drop-shadow(1px 1px 0 rgba(0,0,0,0.35))" }}
+              draggable={false}
+            />
           </Link>
 
           <nav className="flex items-center gap-4 ml-4">
