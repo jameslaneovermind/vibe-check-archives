@@ -7,6 +7,7 @@ import { ListingCard, type Listing } from "@/components/ListingCard";
 import { Sidebar } from "@/components/Sidebar";
 import { IEFrame } from "@/components/IEFrame";
 import { BestOf } from "@/components/BestOf";
+import { BannerAd } from "@/components/BannerAd";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -44,6 +45,17 @@ const listings: Listing[] = [
     excerpt: "The flat white takes 90 seconds. They time it. Worth it.",
     reviewer: "Tom B.",
     topPick: true,
+  },
+  {
+    id: "definitely-real",
+    name: "Definitely Real Restaurant LLC",
+    category: "Italian Restaurant",
+    pillKind: "food",
+    rating: 5.0,
+    reviews: 1,
+    excerpt: "This restaurant is amazing and not at all suspicious. Five stars, would patronize again.",
+    reviewer: "Anonymous",
+    sponsored: true,
   },
   {
     id: "hotfix",
@@ -137,6 +149,7 @@ function Index() {
 
         <main className="flex-1">
           <div className="mx-auto max-w-[1200px] px-4">
+            <BannerAd />
             <Hero />
             <CategoryBar />
             <BestOf />
@@ -145,9 +158,10 @@ function Index() {
               <div>
                 <div className="flex items-center justify-between mb-1.5 px-0.5">
                   <h2
-                    className="text-[16px] font-bold text-[#1B4332]"
+                    className="text-[16px] font-bold text-[#1B4332] flex items-center gap-1.5"
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
+                    <RssBadge />
                     Recent Activity — Listings near you
                   </h2>
                   <div className="text-[11px] text-[#666]">
@@ -173,11 +187,62 @@ function Index() {
 
               <Sidebar />
             </div>
+
+            {/* Inline mini footer strip — period accuracy */}
+            <div className="mt-4 pt-2 border-t border-[#DDD] text-center text-[11px] text-[#666]">
+              {["About", "Help", "Privacy", "Terms", "Site Map", "RSS", "Mobile"].map((l, i, a) => (
+                <span key={l}>
+                  <a href="#" className="!text-[#666]">{l}</a>
+                  {i < a.length - 1 && <span className="mx-2 text-[#CCC]">|</span>}
+                </span>
+              ))}
+              <div className="text-[10px] text-[#999] mt-1 italic">
+                Page generated in 0.0421 seconds
+              </div>
+            </div>
           </div>
         </main>
 
         <Footer />
       </div>
     </IEFrame>
+  );
+}
+
+function RssBadge() {
+  return (
+    <span
+      aria-hidden
+      title="RSS"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: 14,
+        height: 14,
+        background: "linear-gradient(to bottom,#FF9433,#E25A11)",
+        borderRadius: 2,
+        border: "1px solid #B43E07",
+        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.4)",
+      }}
+    >
+      <svg width="9" height="9" viewBox="0 0 9 9">
+        <circle cx="1.6" cy="7.4" r="1.1" fill="#FFFFFF" />
+        <path
+          d="M1 4.2 A4 4 0 0 1 5 8.2"
+          stroke="#FFFFFF"
+          strokeWidth="1.2"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <path
+          d="M1 1.4 A6.8 6.8 0 0 1 7.8 8.2"
+          stroke="#FFFFFF"
+          strokeWidth="1.2"
+          fill="none"
+          strokeLinecap="round"
+        />
+      </svg>
+    </span>
   );
 }

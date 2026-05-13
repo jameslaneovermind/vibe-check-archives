@@ -1,5 +1,6 @@
 import { Stars } from "./Stars";
 import { PixelIcon } from "./PixelIcon";
+import { RatingDistribution } from "./RatingDistribution";
 import iphoneImg from "@/assets/iphone.png";
 
 const mostReviewed = [
@@ -86,6 +87,9 @@ export function Sidebar() {
           </div>
         </div>
       </div>
+
+      {/* Rating distribution */}
+      <RatingDistribution />
 
       {/* Most reviewed */}
       <div className="w2-widget">

@@ -12,6 +12,7 @@ export type Listing = {
   reviewer: string;
   topPick?: boolean;
   suspended?: boolean;
+  sponsored?: boolean;
 };
 
 const PILL_STYLES: Record<Listing["pillKind"], string> = {
@@ -62,8 +63,22 @@ export function ListingCard({ l, index }: { l: Listing; index: number }) {
           >
             {l.category}
           </span>
-          <span className="ml-auto text-[10px] text-[#888]">
-            posted 2 days ago · {((index * 1.3) % 7 + 0.4).toFixed(1)} mi
+          <span className="ml-auto text-[10px] text-[#888] flex items-center gap-2">
+            {l.sponsored && (
+              <span
+                className="px-1 py-px text-[9px] font-bold uppercase tracking-wider"
+                style={{
+                  color: "#888",
+                  border: "1px solid #CCC",
+                  background: "#F5F5F5",
+                  letterSpacing: 0.5,
+                }}
+                title="Sponsored placement"
+              >
+                Vibe Check Ad
+              </span>
+            )}
+            <span>posted 2 days ago · {((index * 1.3) % 7 + 0.4).toFixed(1)} mi</span>
           </span>
         </div>
 
