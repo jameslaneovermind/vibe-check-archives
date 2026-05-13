@@ -1,34 +1,39 @@
 import type { ReactNode } from "react";
 import { Minus, Square, X } from "lucide-react";
 
+const CHROME_HEIGHT = 26 + 22 + 38 + 28 + 22; // title + menu + toolbar + address + links = 136
+const STATUS_HEIGHT = 22;
+const TASKBAR_HEIGHT = 36;
+
 export function IEFrame({ children }: { children: ReactNode }) {
   return (
-    <div
-      className="min-h-screen w-full p-0 sm:p-4 lg:p-6"
-      style={{
-        background:
-          "radial-gradient(ellipse at 50% 35%, #B7E0F4 0%, #6BB4DC 35%, #4A8FB8 65%, #2B5F7E 100%), #4A8FB8",
-        fontFamily: "Tahoma, Verdana, sans-serif",
-      }}
-    >
-      {/* Bliss-style ground silhouette */}
+    <>
+      {/* Fixed XP desktop background */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-x-0 bottom-12 h-[42vh] -z-0"
+        className="fixed inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 35%, #B7E0F4 0%, #6BB4DC 35%, #4A8FB8 65%, #2B5F7E 100%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="fixed inset-x-0 bottom-9 h-[42vh] -z-10 pointer-events-none"
         style={{
           background:
             "radial-gradient(ellipse 80% 60% at 30% 100%, #5C8E3C 0%, #4A7A2E 40%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 100%, #6FA84A 0%, #4A7A2E 50%, transparent 70%)",
         }}
       />
 
-      {/* IE6 window */}
+      {/* Fixed IE6 chrome — title bar through links bar */}
       <div
-        className="relative mx-auto max-w-[1320px] shadow-[0_8px_30px_rgba(0,0,0,0.45)]"
+        className="fixed top-0 inset-x-0 z-40"
         style={{
-          border: "1px solid #0831D9",
-          borderRadius: "8px 8px 0 0",
           background: "#ECE9D8",
-          overflow: "hidden",
+          borderBottom: "1px solid #ACA899",
+          fontFamily: "Tahoma, Verdana, sans-serif",
+          boxShadow: "0 4px 14px rgba(0,0,0,0.25)",
         }}
       >
         {/* Title bar */}
@@ -41,27 +46,13 @@ export function IEFrame({ children }: { children: ReactNode }) {
             height: 26,
           }}
         >
-          {/* IE logo */}
-          <div
-            className="w-4 h-4 shrink-0 rounded-full flex items-center justify-center text-[10px] font-bold italic"
-            style={{
-              background:
-                "radial-gradient(circle at 30% 30%, #FFE680 0%, #FFB800 50%, #B07B00 100%)",
-              color: "#003B8E",
-              border: "1px solid #003B8E",
-              fontFamily: "Times, serif",
-              lineHeight: 1,
-            }}
-          >
-            e
-          </div>
+          <IELogo size={16} />
           <span
             className="text-[11px] font-bold flex-1 truncate"
             style={{ textShadow: "1px 1px 0 rgba(0,0,0,0.4)" }}
           >
             Vibe Check - Microsoft Internet Explorer
           </span>
-          {/* Window controls */}
           <div className="flex items-center gap-0.5">
             {[Minus, Square].map((Icon, i) => (
               <button
@@ -102,7 +93,10 @@ export function IEFrame({ children }: { children: ReactNode }) {
           }}
         >
           {["File", "Edit", "View", "Favorites", "Tools", "Help"].map((m) => (
-            <span key={m} className="cursor-default hover:bg-[#316AC5] hover:text-white px-1">
+            <span
+              key={m}
+              className="cursor-default hover:bg-[#316AC5] hover:text-white px-1"
+            >
               <u>{m[0]}</u>
               {m.slice(1)}
             </span>
@@ -153,10 +147,11 @@ export function IEFrame({ children }: { children: ReactNode }) {
 
         {/* Address bar */}
         <div
-          className="flex items-center gap-2 px-2 py-1"
+          className="flex items-center gap-2 px-2"
           style={{
             background: "#ECE9D8",
             borderBottom: "1px solid #ACA899",
+            height: 28,
           }}
         >
           <span className="text-[11px]">
@@ -169,19 +164,7 @@ export function IEFrame({ children }: { children: ReactNode }) {
               boxShadow: "inset 1px 1px 0 #B6BDC7",
             }}
           >
-            {/* IE icon in URL */}
-            <div
-              className="w-3 h-3 shrink-0 rounded-full flex items-center justify-center text-[8px] font-bold italic"
-              style={{
-                background:
-                  "radial-gradient(circle at 30% 30%, #FFE680 0%, #FFB800 50%, #B07B00 100%)",
-                color: "#003B8E",
-                fontFamily: "Times, serif",
-                lineHeight: 1,
-              }}
-            >
-              e
-            </div>
+            <IELogo size={12} />
             <span className="text-[11px] text-black truncate flex-1">
               http://www.vibecheck.com/
             </span>
@@ -203,11 +186,12 @@ export function IEFrame({ children }: { children: ReactNode }) {
 
         {/* Links bar */}
         <div
-          className="flex items-center gap-3 px-3 py-0.5 text-[11px]"
+          className="flex items-center gap-3 px-3 text-[11px]"
           style={{
             background: "#ECE9D8",
             borderBottom: "1px solid #ACA899",
             color: "#0831D9",
+            height: 22,
           }}
         >
           <span className="text-black">Links</span>
@@ -231,52 +215,60 @@ export function IEFrame({ children }: { children: ReactNode }) {
             </span>
           ))}
         </div>
-
-        {/* Browser viewport — site renders here */}
-        <div
-          className="bg-[#F0F0F0] overflow-auto"
-          style={{ minHeight: "calc(100vh - 220px)" }}
-        >
-          {children}
-        </div>
-
-        {/* Status bar */}
-        <div
-          className="flex items-center text-[11px] px-2 py-0.5 gap-1"
-          style={{
-            background: "#ECE9D8",
-            borderTop: "1px solid #FFFFFF",
-            boxShadow: "inset 0 1px 0 #ACA899",
-            height: 22,
-          }}
-        >
-          <span className="px-2 border-r border-[#ACA899]">Done</span>
-          <div className="flex-1 h-3 mx-2 bg-white border border-[#ACA899] shadow-[inset_1px_1px_0_#B6BDC7]" />
-          <span className="px-2 border-l border-[#ACA899] flex items-center gap-1">
-            <span
-              className="inline-block w-3 h-3"
-              style={{
-                background: "#FFB800",
-                clipPath:
-                  "polygon(20% 45%, 20% 30%, 35% 15%, 65% 15%, 80% 30%, 80% 45%, 90% 45%, 90% 95%, 10% 95%, 10% 45%)",
-              }}
-              title="Secure"
-            />
-            Internet
-          </span>
-        </div>
       </div>
 
-      {/* Taskbar */}
-      <div
-        className="fixed bottom-0 inset-x-0 h-9 flex items-center px-1 gap-1 z-50"
+      {/* Scrollable browser viewport */}
+      <main
+        className="fixed inset-x-0 overflow-y-auto bg-[#F0F0F0] z-10"
         style={{
+          top: CHROME_HEIGHT,
+          bottom: STATUS_HEIGHT + TASKBAR_HEIGHT,
+          borderLeft: "1px solid #0831D9",
+          borderRight: "1px solid #0831D9",
+          fontFamily: "Verdana, Tahoma, sans-serif",
+        }}
+      >
+        {children}
+      </main>
+
+      {/* Fixed status bar */}
+      <div
+        className="fixed inset-x-0 z-40 flex items-center text-[11px] px-2 gap-1"
+        style={{
+          bottom: TASKBAR_HEIGHT,
+          height: STATUS_HEIGHT,
+          background: "#ECE9D8",
+          borderTop: "1px solid #FFFFFF",
+          boxShadow: "inset 0 1px 0 #ACA899",
+          fontFamily: "Tahoma, sans-serif",
+        }}
+      >
+        <span className="px-2 border-r border-[#ACA899]">Done</span>
+        <div className="flex-1 h-3 mx-2 bg-white border border-[#ACA899] shadow-[inset_1px_1px_0_#B6BDC7]" />
+        <span className="px-2 border-l border-[#ACA899] flex items-center gap-1">
+          <span
+            className="inline-block w-3 h-3"
+            style={{
+              background: "#FFB800",
+              clipPath:
+                "polygon(20% 45%, 20% 30%, 35% 15%, 65% 15%, 80% 30%, 80% 45%, 90% 45%, 90% 95%, 10% 95%, 10% 45%)",
+            }}
+          />
+          Internet
+        </span>
+      </div>
+
+      {/* Fixed XP taskbar */}
+      <div
+        className="fixed bottom-0 inset-x-0 flex items-center px-1 gap-1 z-50"
+        style={{
+          height: TASKBAR_HEIGHT,
           background:
             "linear-gradient(to bottom, #245EDC 0%, #3A7DE5 8%, #1F58D4 50%, #245EDC 100%)",
           borderTop: "1px solid #0831D9",
+          fontFamily: "Tahoma, sans-serif",
         }}
       >
-        {/* Start button */}
         <button
           className="h-7 px-3 pr-4 flex items-center gap-1.5 text-white font-bold italic text-[13px]"
           style={{
@@ -285,7 +277,6 @@ export function IEFrame({ children }: { children: ReactNode }) {
             borderRadius: "0 12px 12px 0",
             border: "1px solid #1E5E2A",
             boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.3)",
-            fontFamily: "Tahoma, sans-serif",
             textShadow: "1px 1px 0 rgba(0,0,0,0.4)",
           }}
         >
@@ -300,7 +291,6 @@ export function IEFrame({ children }: { children: ReactNode }) {
           start
         </button>
 
-        {/* Active app */}
         <div
           className="h-7 px-2 flex items-center gap-1.5 text-white text-[11px] font-bold max-w-[260px]"
           style={{
@@ -311,22 +301,10 @@ export function IEFrame({ children }: { children: ReactNode }) {
             textShadow: "1px 1px 0 rgba(0,0,0,0.4)",
           }}
         >
-          <div
-            className="w-3.5 h-3.5 rounded-full flex items-center justify-center text-[8px] font-bold italic shrink-0"
-            style={{
-              background:
-                "radial-gradient(circle at 30% 30%, #FFE680 0%, #FFB800 50%, #B07B00 100%)",
-              color: "#003B8E",
-              fontFamily: "Times, serif",
-              lineHeight: 1,
-            }}
-          >
-            e
-          </div>
+          <IELogo size={14} />
           <span className="truncate">Vibe Check - Microsoft I…</span>
         </div>
 
-        {/* System tray */}
         <div
           className="ml-auto h-7 flex items-center gap-2 px-2 text-white text-[11px]"
           style={{
@@ -338,11 +316,35 @@ export function IEFrame({ children }: { children: ReactNode }) {
         >
           <span className="text-base">🔊</span>
           <span className="text-base">🛡</span>
-          <span className="font-bold" style={{ textShadow: "1px 1px 0 rgba(0,0,0,0.4)" }}>
+          <span
+            className="font-bold"
+            style={{ textShadow: "1px 1px 0 rgba(0,0,0,0.4)" }}
+          >
             14:32
           </span>
         </div>
       </div>
+    </>
+  );
+}
+
+function IELogo({ size }: { size: number }) {
+  return (
+    <div
+      className="shrink-0 rounded-full flex items-center justify-center font-bold italic"
+      style={{
+        width: size,
+        height: size,
+        background:
+          "radial-gradient(circle at 30% 30%, #FFE680 0%, #FFB800 50%, #B07B00 100%)",
+        color: "#003B8E",
+        border: size >= 16 ? "1px solid #003B8E" : undefined,
+        fontFamily: "Times, serif",
+        fontSize: Math.round(size * 0.65),
+        lineHeight: 1,
+      }}
+    >
+      e
     </div>
   );
 }
