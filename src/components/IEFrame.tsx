@@ -259,72 +259,13 @@ export function IEFrame({ children }: { children: ReactNode }) {
         </span>
       </div>
 
-      {/* Fixed XP taskbar */}
-      <div
-        className="fixed bottom-0 inset-x-0 flex items-center px-1 gap-1 z-50"
-        style={{
-          height: TASKBAR_HEIGHT,
-          background:
-            "linear-gradient(to bottom, #245EDC 0%, #3A7DE5 8%, #1F58D4 50%, #245EDC 100%)",
-          borderTop: "1px solid #0831D9",
-          fontFamily: "Tahoma, sans-serif",
-        }}
-      >
-        <button
-          className="h-7 px-3 pr-4 flex items-center gap-1.5 text-white font-bold italic text-[13px]"
-          style={{
-            background:
-              "linear-gradient(to bottom, #3FAB3F 0%, #2D8B3C 50%, #1E6B2E 100%)",
-            borderRadius: "0 12px 12px 0",
-            border: "1px solid #1E5E2A",
-            boxShadow: "inset 1px 1px 0 rgba(255,255,255,0.3)",
-            textShadow: "1px 1px 0 rgba(0,0,0,0.4)",
-          }}
-        >
-          <span className="inline-flex gap-px">
-            <span className="w-1.5 h-1.5 bg-[#E63946]" />
-            <span className="w-1.5 h-1.5 bg-[#3FAB3F]" />
-          </span>
-          <span className="inline-flex gap-px -ml-0.5">
-            <span className="w-1.5 h-1.5 bg-[#FFB800]" />
-            <span className="w-1.5 h-1.5 bg-[#3A7DE5]" />
-          </span>
-          start
-        </button>
-
-        <div
-          className="h-7 px-2 flex items-center gap-1.5 text-white text-[11px] font-bold max-w-[260px]"
-          style={{
-            background:
-              "linear-gradient(to bottom, #1F4FB8 0%, #1A47A8 100%)",
-            border: "1px solid #0831D9",
-            boxShadow: "inset 1px 1px 0 rgba(0,0,0,0.2)",
-            textShadow: "1px 1px 0 rgba(0,0,0,0.4)",
-          }}
-        >
-          <IELogo size={14} />
-          <span className="truncate">Vibe Check - Microsoft I…</span>
-        </div>
-
-        <div
-          className="ml-auto h-7 flex items-center gap-2 px-2 text-white text-[11px]"
-          style={{
-            background:
-              "linear-gradient(to bottom, #0F8AD8 0%, #0972C0 100%)",
-            borderLeft: "1px solid #0831D9",
-            boxShadow: "inset 1px 0 0 rgba(255,255,255,0.2)",
-          }}
-        >
-          <span className="text-base">🔊</span>
-          <span className="text-base">🛡</span>
-          <span
-            className="font-bold"
-            style={{ textShadow: "1px 1px 0 rgba(0,0,0,0.4)" }}
-          >
-            14:32
-          </span>
-        </div>
-      </div>
+      <img
+        src={xpTaskbar}
+        alt="Windows XP taskbar"
+        className="fixed bottom-0 inset-x-0 z-50 w-full block"
+        style={{ height: TASKBAR_HEIGHT, objectFit: "fill" }}
+        draggable={false}
+      />
     </>
   );
 }
