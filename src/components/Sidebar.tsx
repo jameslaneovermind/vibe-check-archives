@@ -1,5 +1,6 @@
 import { Stars } from "./Stars";
 import { PixelIcon } from "./PixelIcon";
+import iphoneImg from "@/assets/iphone.png";
 
 const mostReviewed = [
   { id: "cold-start", name: "Cold Start", reviews: 412 },
@@ -37,18 +38,13 @@ export function Sidebar() {
           ☎ Get Vibe Check on your phone
         </div>
         <div className="p-2.5 flex gap-2">
-          <div
-            className="w2-photo w-[58px] h-[88px] shrink-0 flex flex-col items-center justify-center"
-            style={{
-              background: "linear-gradient(to bottom, #2D6A4F, #1B4332)",
-              padding: 4,
-            }}
-          >
-            <div className="w-full flex-1 bg-white border border-[#888] flex items-center justify-center text-[8px] text-[#2D6A4F] font-bold leading-tight text-center px-0.5">
-              VIBE<br/>CHECK
-            </div>
-            <div className="w-3 h-3 rounded-full bg-[#1B4332] border border-white mt-1" />
-          </div>
+          <img
+            src={iphoneImg}
+            alt="Vibe Check on iPhone"
+            className="w-[68px] h-auto shrink-0 select-none"
+            style={{ imageRendering: "auto" }}
+            draggable={false}
+          />
           <div className="flex-1 min-w-0 text-[11px]">
             <div className="font-bold text-[#1C5D8C]">It's free.</div>
             <p className="text-[#444] mt-0.5 leading-snug">
