@@ -1,3 +1,5 @@
+import { GoldStar } from "./GoldStar";
+
 export function Hero() {
   return (
     <div className="mt-3 flex items-stretch gap-0 border border-[#F0D878] rounded shadow-[0_1px_2px_rgba(0,0,0,0.08)] overflow-hidden relative">
@@ -5,18 +7,7 @@ export function Hero() {
         className="flex-1 px-4 py-3 flex items-center gap-3"
         style={{ background: "linear-gradient(to bottom,#FFFBEA 0%,#FFF3C2 100%)" }}
       >
-        <span
-          className="inline-block shrink-0 w-9 h-9 rounded-full text-center"
-          style={{
-            background: "radial-gradient(circle at 35% 30%, #FFE680, #E8A800 70%, #8C6A00)",
-            lineHeight: "36px",
-            fontSize: "20px",
-            border: "2px solid #FFFFFF",
-            boxShadow: "0 1px 2px rgba(0,0,0,0.25)",
-          }}
-        >
-          ★
-        </span>
+        <GoldStar size={38} />
         <div className="flex-1 min-w-0">
           <div
             className="text-[14px] font-bold text-[#1B4332] leading-tight"
