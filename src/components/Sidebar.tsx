@@ -1,5 +1,6 @@
 import { Stars } from "./Stars";
 import { PixelIcon } from "./PixelIcon";
+import iphoneImg from "@/assets/iphone.png";
 
 const mostReviewed = [
   { id: "cold-start", name: "Cold Start", reviews: 412 },
