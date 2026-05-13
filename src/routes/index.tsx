@@ -208,3 +208,41 @@ function Index() {
     </IEFrame>
   );
 }
+
+function RssBadge() {
+  return (
+    <span
+      aria-hidden
+      title="RSS"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        width: 14,
+        height: 14,
+        background: "linear-gradient(to bottom,#FF9433,#E25A11)",
+        borderRadius: 2,
+        border: "1px solid #B43E07",
+        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.4)",
+      }}
+    >
+      <svg width="9" height="9" viewBox="0 0 9 9">
+        <circle cx="1.6" cy="7.4" r="1.1" fill="#FFFFFF" />
+        <path
+          d="M1 4.2 A4 4 0 0 1 5 8.2"
+          stroke="#FFFFFF"
+          strokeWidth="1.2"
+          fill="none"
+          strokeLinecap="round"
+        />
+        <path
+          d="M1 1.4 A6.8 6.8 0 0 1 7.8 8.2"
+          stroke="#FFFFFF"
+          strokeWidth="1.2"
+          fill="none"
+          strokeLinecap="round"
+        />
+      </svg>
+    </span>
+  );
+}
