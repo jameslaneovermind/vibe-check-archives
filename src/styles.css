@@ -50,10 +50,10 @@
   --shadow-w2-star: 1px 1px 0 rgba(0,0,0,0.25);
 
   --gradient-nav: linear-gradient(to right, #2D6A4F 0%, #52B788 100%);
-  --gradient-button: linear-gradient(to bottom, #7DD3A8 0%, #52B788 49%, #3FA372 50%, #2D6A4F 100%);
-  --gradient-button-hover: linear-gradient(to bottom, #8FE0B5 0%, #5EC396 49%, #4BB082 50%, #357A5C 100%);
+  --gradient-button: linear-gradient(to bottom, #8FE5B8 0%, #4FBE8A 48%, #2E9E66 52%, #1F6B47 100%);
+  --gradient-button-hover: linear-gradient(to bottom, #A4F0C7 0%, #5BCC97 48%, #38AE74 52%, #245733 100%);
   --gradient-bevel: linear-gradient(to bottom, #FFFFFF 0%, #F0F0F0 100%);
-  --gradient-search-btn: linear-gradient(to bottom, #6BC79A 0%, #52B788 50%, #3FA372 51%, #2D6A4F 100%);
+  --gradient-search-btn: linear-gradient(to bottom, #7AD8A8 0%, #4FBE8A 49%, #2E9E66 51%, #1F6B47 100%);
 }
 
 :root {
@@ -129,11 +129,12 @@
     font-family: var(--font-sans);
     font-size: 12px;
     text-decoration: none;
-    border: 1px solid #2D6A4F;
+    border: 1px solid #154A30;
     box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.5),
-      0 1px 2px rgba(0,0,0,0.25);
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+      inset 0 1px 0 rgba(255,255,255,0.55),
+      inset 0 -1px 0 rgba(0,0,0,0.15),
+      0 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.35);
     cursor: pointer;
     transition: filter 0.1s ease;
   }
@@ -155,11 +156,12 @@
     font-weight: bold;
     font-family: var(--font-sans);
     font-size: 12px;
-    border: 1px solid #1B4332;
+    border: 1px solid #154A30;
     box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.4),
-      0 1px 1px rgba(0,0,0,0.2);
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+      inset 0 1px 0 rgba(255,255,255,0.5),
+      inset 0 -1px 0 rgba(0,0,0,0.15),
+      0 1px 2px rgba(0,0,0,0.3);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.35);
     cursor: pointer;
   }
 
@@ -204,11 +206,14 @@
     text-decoration: none;
   }
   .w2-cat[data-active="true"] {
-    background: linear-gradient(to bottom, #2D6A4F 0%, #52B788 100%);
+    background: linear-gradient(to bottom, #7AD8A8 0%, #4FBE8A 49%, #2E9E66 51%, #1F6B47 100%);
     color: #FFFFFF;
-    border-color: #1B4332;
-    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+    border-color: #154A30;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.35);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.5),
+      inset 0 -1px 0 rgba(0,0,0,0.15),
+      0 1px 1px rgba(0,0,0,0.2);
   }
 
   /* Sidebar widget */
