@@ -88,6 +88,9 @@ export function Sidebar() {
         </div>
       </div>
 
+      {/* Rating distribution */}
+      <RatingDistribution />
+
       {/* Most reviewed */}
       <div className="w2-widget">
         <div className="w2-widget-title">★ Most reviewed this week</div>
