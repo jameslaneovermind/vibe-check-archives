@@ -7,6 +7,7 @@ import { ListingCard, type Listing } from "@/components/ListingCard";
 import { Sidebar } from "@/components/Sidebar";
 import { IEFrame } from "@/components/IEFrame";
 import { BestOf } from "@/components/BestOf";
+import { BannerAd } from "@/components/BannerAd";
 
 export const Route = createFileRoute("/")({
   component: Index,
