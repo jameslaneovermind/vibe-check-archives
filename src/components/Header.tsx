@@ -49,7 +49,7 @@ export function Header() {
             >
               near
             </span>
-            <input className="w2-input w-[170px]" placeholder="London, UK" defaultValue="" />
+            <input className="w2-input w-[170px]" placeholder="San Francisco, US" defaultValue="" />
             <button className="w2-btn-search inline-flex items-center gap-1.5">
               <Search className="w-3.5 h-3.5" />
               Search
