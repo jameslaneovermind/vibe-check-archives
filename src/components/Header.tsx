@@ -15,7 +15,7 @@ export function Header() {
             <img
               src={vibeLogo}
               alt="Vibe Check"
-              className="h-8 w-auto select-none"
+              className="h-14 w-auto select-none"
               style={{ filter: "drop-shadow(1px 1px 0 rgba(0,0,0,0.35))" }}
               draggable={false}
             />
