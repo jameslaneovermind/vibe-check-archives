@@ -24,9 +24,10 @@ const PILL_STYLES: Record<Listing["pillKind"], string> = {
 export function ListingCard({ l, index }: { l: Listing; index: number }) {
   return (
     <div
-      className={`bg-white border border-[#CCCCCC] border-b-2 px-3 py-2.5 flex gap-3 relative ${
+      className={`border border-[#CCCCCC] border-b-2 px-3 py-2.5 flex gap-3 relative ${
         l.suspended ? "border-2 border-dashed !border-[#C92A2A]" : ""
       }`}
+      style={{ background: l.sponsored ? "#FBF5E0" : "#FFFFFF" }}
     >
       <span className="w2-listnum">{index + 1}.</span>
 
