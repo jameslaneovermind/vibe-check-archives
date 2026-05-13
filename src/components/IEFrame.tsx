@@ -264,8 +264,8 @@ export function IEFrame({ children }: { children: ReactNode }) {
         style={{
           height: TASKBAR_HEIGHT,
           background:
-            "linear-gradient(to bottom, #245EDC 0%, #3A7DE5 8%, #1F58D4 50%, #245EDC 100%)",
-          borderTop: "1px solid #0831D9",
+            "linear-gradient(to bottom, #1d59c9 0%, #3d8aef 8%, #2a6dd5 50%, #2562c4 100%)",
+          borderTop: "1px solid #5ba5f0",
           fontFamily: "Tahoma, sans-serif",
         }}
       >
