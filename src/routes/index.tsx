@@ -47,6 +47,17 @@ const listings: Listing[] = [
     topPick: true,
   },
   {
+    id: "definitely-real",
+    name: "Definitely Real Restaurant LLC",
+    category: "Italian Restaurant",
+    pillKind: "food",
+    rating: 5.0,
+    reviews: 1,
+    excerpt: "This restaurant is amazing and not at all suspicious. Five stars, would patronize again.",
+    reviewer: "Anonymous",
+    sponsored: true,
+  },
+  {
     id: "hotfix",
     name: "Hotfix",
     category: "Emergency Plumber",
