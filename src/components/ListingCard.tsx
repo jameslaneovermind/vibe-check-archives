@@ -63,7 +63,7 @@ export function ListingCard({ l, index }: { l: Listing; index: number }) {
             {l.category}
           </span>
           <span className="ml-auto text-[10px] text-[#888]">
-            posted 2 days ago · {Math.floor(Math.random() * 8) + 2} mi
+            posted 2 days ago · {((index * 1.3) % 7 + 0.4).toFixed(1)} mi
           </span>
         </div>
 

@@ -164,7 +164,7 @@ export function IEFrame({ children }: { children: ReactNode }) {
               boxShadow: "inset 1px 1px 0 #B6BDC7",
             }}
           >
-            <IELogo size={12} />
+            <StarFav size={12} />
             <span className="text-[11px] text-black truncate flex-1">
               http://www.vibecheck.com/
             </span>
@@ -325,6 +325,20 @@ export function IEFrame({ children }: { children: ReactNode }) {
         </div>
       </div>
     </>
+  );
+}
+
+function StarFav({ size }: { size: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 16 16" className="shrink-0">
+      <path
+        fill="#FFB800"
+        stroke="#B07B00"
+        strokeWidth="0.7"
+        strokeLinejoin="round"
+        d="M8 1.5l1.9 4.1 4.5.5-3.4 3 1 4.4L8 11.3 3.9 13.5l1-4.4-3.4-3 4.5-.5z"
+      />
+    </svg>
   );
 }
 

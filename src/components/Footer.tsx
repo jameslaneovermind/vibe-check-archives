@@ -108,13 +108,54 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Badge strip */}
+      <div className="w-full bg-[#1A1A1A] border-t border-[#333]">
+        <div className="mx-auto max-w-[1200px] px-4 py-2 flex flex-wrap items-center gap-2 text-[10px] text-white/70">
+          <a href="#top" className="!text-[#7DD3A8] no-underline hover:underline">↑ Back to top</a>
+          <span className="text-white/30">·</span>
+          <a href="#" className="!text-white/70">✉ Tell a friend</a>
+          <span className="text-white/30">·</span>
+          <a href="#" className="!text-white/70">★ Bookmark this page</a>
+          <span className="text-white/30">·</span>
+          <a href="#" className="inline-flex items-center gap-1 !text-white/70">
+            <span style={{
+              background: "#F26522",
+              color: "#fff",
+              fontWeight: "bold",
+              padding: "1px 4px",
+              borderRadius: 2,
+              fontSize: 9,
+              letterSpacing: 0.5,
+            }}>RSS</span>
+            Subscribe
+          </a>
+          <span className="ml-auto inline-flex items-center gap-2">
+            <span style={{
+              background: "linear-gradient(to bottom,#3A6AC7,#1F4FB8)",
+              color: "#fff",
+              fontWeight: "bold",
+              padding: "1px 5px",
+              borderRadius: 2,
+              fontSize: 9,
+              border: "1px solid #0F3088",
+              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.25)",
+            }}>W3C</span>
+            <a href="#" className="!text-white/60">Valid XHTML 1.0</a>
+            <span className="text-white/30">·</span>
+            <a href="#" className="!text-white/60">Valid CSS</a>
+            <span className="text-white/30">·</span>
+            <span className="!text-white/50">Powered by Brent</span>
+          </span>
+        </div>
+      </div>
+
       {/* Copyright bar */}
       <div className="w-full bg-[#0F0F0F] border-t border-[#333]">
         <div className="mx-auto max-w-[1200px] px-4 py-2 text-[10px] text-white/50 flex flex-wrap justify-between gap-2">
           <span>
             Listings business directory: <a href="#" className="!text-white/70">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</a>
           </span>
-          <span>© 2007–2026 Vibe Check Ltd. · v2.0.7 · uptime 99.91% · Last updated: just now</span>
+          <span>© 2004–2011 Vibe Check Ltd. · v2.0.7 · uptime 99.91% · Last updated: just now</span>
         </div>
       </div>
     </footer>
