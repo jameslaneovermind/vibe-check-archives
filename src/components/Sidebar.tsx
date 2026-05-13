@@ -71,7 +71,7 @@ export function Sidebar() {
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-1.5">
-              <Stars rating={5} />
+              <Stars rating={5} size="md" />
               <a href="#" className="text-[12px] font-bold truncate">Cold Start</a>
             </div>
             <p

@@ -57,7 +57,7 @@ function Column({
         </ol>
       </div>
       <div className="mt-1 flex items-center gap-1">
-        <Stars rating={feature.rating} />
+        <Stars rating={feature.rating} size="md" />
         <span className="text-[10px] text-[#666]">{feature.reviews} reviews</span>
       </div>
     </div>
