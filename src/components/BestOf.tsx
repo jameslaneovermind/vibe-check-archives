@@ -68,7 +68,7 @@ export function BestOf() {
   return (
     <div className="w2-bestof mt-3">
       <div className="w2-bestof-title">
-        <GoldStar size={22} />
+        <GoldStar size={16} />
         <span className="ml-1.5">Best of <span style={{ color: "#C92A2A" }}>Vibe&nbsp;Check</span></span>
         <span className="ml-auto text-[10px] font-normal text-[#8A6D00]">
           <a href="#" className="font-bold">More “Best Of” »</a>
