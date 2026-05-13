@@ -226,7 +226,7 @@ export function IEFrame({ children }: { children: ReactNode }) {
           borderLeft: "1px solid #0831D9",
           borderRight: "1px solid #0831D9",
           fontFamily: "Verdana, Tahoma, sans-serif",
-          background: "#FAF6EC",
+          background: "#FDFDFB",
         }}
       >
         {children}

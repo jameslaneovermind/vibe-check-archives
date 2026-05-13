@@ -157,8 +157,8 @@ function Index() {
             <div className="mt-3 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-3">
               <div>
                 <div
-                  className="flex items-center justify-between mb-1.5 px-3 border border-[#F0D878] rounded-t"
-                  style={{ background: "#FEF8E6", minHeight: 30 }}
+                  className="flex items-center justify-between mb-1.5 px-3"
+                  style={{ minHeight: 26 }}
                 >
                   <h2
                     className="text-[14px] font-bold text-[#1B4332] flex items-center gap-1.5 my-0"
