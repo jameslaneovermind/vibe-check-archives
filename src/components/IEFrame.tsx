@@ -164,7 +164,7 @@ export function IEFrame({ children }: { children: ReactNode }) {
               boxShadow: "inset 1px 1px 0 #B6BDC7",
             }}
           >
-            <IELogo size={12} />
+            <StarFav size={12} />
             <span className="text-[11px] text-black truncate flex-1">
               http://www.vibecheck.com/
             </span>
