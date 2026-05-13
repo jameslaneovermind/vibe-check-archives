@@ -371,4 +371,83 @@
     font-size: 11px;
   }
   .w2-link-action:hover { text-decoration: underline; }
+
+  /* "Best of" yellow featured panel — Yelp 2011 style */
+  .w2-bestof {
+    background: #FFFBEA;
+    border: 1px solid #F0D878;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+  }
+  .w2-bestof-title {
+    background: linear-gradient(to bottom, #FFF8D6 0%, #FCEBA8 100%);
+    border-bottom: 1px solid #F0D878;
+    padding: 6px 10px;
+    font-family: var(--font-serif);
+    font-weight: bold;
+    color: #8A6D00;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 4px 4px 0 0;
+  }
+  .w2-bestof-trophy {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle at 35% 30%, #FFE680, #E8A800 70%, #8C6A00);
+    border-radius: 3px;
+    color: #5C3A00;
+    text-align: center;
+    line-height: 18px;
+    font-size: 11px;
+    border: 1px solid #8C6A00;
+  }
+
+  /* Variant widget titles */
+  .w2-widget-title.w2-title-red {
+    background: linear-gradient(to bottom, #FFE3E0 0%, #F5BEB6 100%);
+    border-bottom-color: #D08A80;
+    color: #A8261B;
+  }
+  .w2-widget-title.w2-title-blue {
+    background: linear-gradient(to bottom, #DCEAF5 0%, #B8D4E8 100%);
+    border-bottom-color: #6A9BC0;
+    color: #1C5D8C;
+  }
+  .w2-widget-title.w2-title-orange {
+    background: linear-gradient(to bottom, #FFE8C2 0%, #F5C97A 100%);
+    border-bottom-color: #C99A3C;
+    color: #8C5A00;
+  }
+  .w2-widget-title.w2-title-purple {
+    background: linear-gradient(to bottom, #EADCF5 0%, #C9A8E8 100%);
+    border-bottom-color: #8C6AB8;
+    color: #5C2A8C;
+  }
+
+  /* Numbered listing index — large grey numeral à la Yelp */
+  .w2-listnum {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-weight: bold;
+    color: #2D6A4F;
+    line-height: 1;
+    width: 22px;
+    text-align: right;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  /* Footer column heading */
+  .w2-foot-h {
+    color: #7DD3A8;
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 4px;
+  }
 }

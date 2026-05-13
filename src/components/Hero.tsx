@@ -1,39 +1,38 @@
 export function Hero() {
   return (
-    <div className="w2-box p-5 mt-4 relative overflow-hidden">
-      <div className="w2-ribbon">BETA</div>
-
-      <h1
-        className="text-[26px] font-bold text-[#1B4332] leading-tight"
-        style={{ fontFamily: "var(--font-serif)" }}
+    <div className="mt-3 flex items-stretch gap-0 border border-[#F0D878] rounded shadow-[0_1px_2px_rgba(0,0,0,0.08)] overflow-hidden relative">
+      <div
+        className="flex-1 px-4 py-3 flex items-center gap-3"
+        style={{ background: "linear-gradient(to bottom,#FFFBEA 0%,#FFF3C2 100%)" }}
       >
-        Find businesses that actually got reviewed.
-      </h1>
-      <p className="text-[13px] text-[#444] mt-1.5 max-w-[640px]">
-        Every listing on Vibe Check is editorially approved. No rubber stamps, ever.
-      </p>
-
-      <div className="mt-3 flex flex-wrap items-center gap-3 text-[12px] text-[#2D6A4F] font-bold">
-        <span className="flex items-center gap-1.5">
-          <span className="text-[#FFB800] text-base">✦</span>
-          12,847 reviews posted
+        <span
+          className="inline-block shrink-0 w-9 h-9 rounded-full text-center"
+          style={{
+            background: "radial-gradient(circle at 35% 30%, #FFE680, #E8A800 70%, #8C6A00)",
+            lineHeight: "36px",
+            fontSize: "20px",
+            border: "2px solid #FFFFFF",
+            boxShadow: "0 1px 2px rgba(0,0,0,0.25)",
+          }}
+        >
+          ★
         </span>
-        <span className="text-[#CCC]">·</span>
-        <span className="flex items-center gap-1.5">
-          <span className="text-[#FFB800] text-base">✦</span>
-          3,204 businesses listed
-        </span>
-        <span className="text-[#CCC]">·</span>
-        <span className="flex items-center gap-1.5">
-          <span className="text-[#FFB800] text-base">✦</span>
-          Editorial approval required
-        </span>
+        <div className="flex-1 min-w-0">
+          <div
+            className="text-[14px] font-bold text-[#1B4332] leading-tight"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Vibe Check is the editorially approved way to find businesses that
+            actually got reviewed.
+          </div>
+          <div className="text-[11px] text-[#5C4A00] mt-0.5">
+            <strong>12,847</strong> reviews · <strong>3,204</strong> businesses ·
+            no rubber stamps, ever.
+          </div>
+        </div>
+        <a href="#" className="w2-btn shrink-0">Browse listings →</a>
       </div>
-
-      <div className="mt-4 flex items-center gap-3">
-        <a href="#" className="w2-btn">Browse listings →</a>
-        <a href="#" className="text-[12px]">or read our <em>editorial standards</em> »</a>
-      </div>
+      <div className="w2-ribbon">BETA</div>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { CategoryBar } from "@/components/CategoryBar";
 import { ListingCard, type Listing } from "@/components/ListingCard";
 import { Sidebar } from "@/components/Sidebar";
 import { IEFrame } from "@/components/IEFrame";
+import { BestOf } from "@/components/BestOf";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -138,15 +139,16 @@ function Index() {
           <div className="mx-auto max-w-[1200px] px-4">
             <Hero />
             <CategoryBar />
+            <BestOf />
 
-            <div className="mt-4 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-4">
+            <div className="mt-3 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-3">
               <div>
-                <div className="flex items-center justify-between mb-2 px-1">
+                <div className="flex items-center justify-between mb-1.5 px-0.5">
                   <h2
-                    className="text-[18px] font-bold text-[#1B4332]"
+                    className="text-[16px] font-bold text-[#1B4332]"
                     style={{ fontFamily: "var(--font-serif)" }}
                   >
-                    Listings near you
+                    Recent Activity — Listings near you
                   </h2>
                   <div className="text-[11px] text-[#666]">
                     Sort by:{" "}
@@ -155,15 +157,15 @@ function Index() {
                   </div>
                 </div>
 
-                <div className="space-y-3">
-                  {listings.map((l) => (
-                    <ListingCard key={l.id} l={l} />
+                <div className="bg-white border border-[#CCCCCC] border-t-[3px] border-t-[#52B788] rounded">
+                  {listings.map((l, i) => (
+                    <ListingCard key={l.id} l={l} index={i} />
                   ))}
                 </div>
 
-                <div className="w2-box mt-4 p-3 text-center text-[12px]">
+                <div className="mt-3 p-2.5 text-center text-[12px] bg-white border border-[#CCCCCC] rounded">
                   <a href="#" className="w2-btn">Load more listings ↓</a>
-                  <div className="text-[10px] text-[#888] mt-2">
+                  <div className="text-[10px] text-[#888] mt-1.5">
                     Showing 10 of 3,204 editorially approved listings.
                   </div>
                 </div>
