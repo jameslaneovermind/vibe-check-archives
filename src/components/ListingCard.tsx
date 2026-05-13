@@ -1,18 +1,23 @@
 import { Stars } from "./Stars";
+import { PixelIcon } from "./PixelIcon";
 
 export type Listing = {
   id: string;
   name: string;
   category: string;
-  categoryColor: string;
+  pillKind: "food" | "service" | "nightlife";
   rating: number;
   reviews: number;
   excerpt: string;
   reviewer: string;
   topPick?: boolean;
   suspended?: boolean;
-  photoBg: string;
-  initials: string;
+};
+
+const PILL_STYLES: Record<Listing["pillKind"], string> = {
+  food: "linear-gradient(to bottom,#52B788,#2D6A4F)",
+  service: "linear-gradient(to bottom,#3A8FC9,#1C5D8C)",
+  nightlife: "linear-gradient(to bottom,#9C5BD4,#5C2A8C)",
 };
 
 export function ListingCard({ l }: { l: Listing }) {
@@ -22,21 +27,10 @@ export function ListingCard({ l }: { l: Listing }) {
         l.suspended ? "border-2 border-dashed !border-[#C92A2A]" : ""
       }`}
     >
-      {/* Photo */}
+      {/* Pixel-art icon */}
       <div className="relative shrink-0">
-        <div
-          className="w2-photo w-[110px] h-[110px] flex items-center justify-center"
-          style={{ background: l.photoBg }}
-        >
-          <span
-            className="text-white font-bold text-3xl"
-            style={{
-              fontFamily: "var(--font-serif)",
-              textShadow: "2px 2px 0 rgba(0,0,0,0.3)",
-            }}
-          >
-            {l.initials}
-          </span>
+        <div className="w2-photo w-[110px] h-[110px] overflow-hidden">
+          <PixelIcon id={l.id} size={110} />
         </div>
         {l.topPick && (
           <div className="w2-burst">
@@ -60,7 +54,7 @@ export function ListingCard({ l }: { l: Listing }) {
           </a>
           <span
             className="w2-cat-pill mt-1"
-            style={{ background: l.categoryColor }}
+            style={{ background: PILL_STYLES[l.pillKind] }}
           >
             {l.category}
           </span>
