@@ -1,5 +1,6 @@
 import { PixelIcon } from "./PixelIcon";
 import { Stars } from "./Stars";
+import { GoldStar } from "./GoldStar";
 
 const bestRestaurants = [
   { id: "cold-start", name: "Cold Start", reviews: 412, rating: 4.8 },
