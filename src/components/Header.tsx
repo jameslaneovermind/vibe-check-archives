@@ -29,28 +29,43 @@ export function Header() {
             </span>
           </Link>
 
-          <div className="flex-1 flex items-center gap-2 ml-2">
-            <label
-              htmlFor="vc-search"
-              className="text-[12px] font-bold text-white"
-              style={{ textShadow: "0 -1px 0 rgba(0,0,0,0.25)" }}
-            >
-              Find:
-            </label>
-            <input
-              id="vc-search"
-              className="w2-input flex-1 max-w-[320px]"
-              placeholder="e.g. coffee, plumber, pub…"
-              defaultValue=""
-            />
-            <span
-              className="text-[11px] text-white/85"
-              style={{ textShadow: "0 -1px 0 rgba(0,0,0,0.25)" }}
-            >
-              near
-            </span>
-            <input className="w2-input w-[170px]" placeholder="San Francisco, US" defaultValue="" />
-            <button className="w2-btn-search inline-flex items-center gap-1.5">
+          <div className="flex-1 flex items-end gap-2 ml-2">
+            <div className="flex flex-col gap-1 flex-[1.5]">
+              <label
+                htmlFor="vc-search"
+                className="text-[12px] text-white"
+                style={{ textShadow: "0 -1px 0 rgba(0,0,0,0.25)" }}
+              >
+                <span className="font-bold">Search for</span>{" "}
+                <span className="font-normal text-white/90">(e.g. coffee, plumber, pub...)</span>
+              </label>
+              <input id="vc-search" className="w2-input w-full" defaultValue="" />
+            </div>
+
+            <div className="flex flex-col gap-1 flex-1">
+              <label
+                htmlFor="vc-near"
+                className="text-[12px] text-white"
+                style={{ textShadow: "0 -1px 0 rgba(0,0,0,0.25)" }}
+              >
+                <span className="font-bold">Near</span>{" "}
+                <span className="font-normal text-white/90">
+                  (Address, Neighborhood, City, State or Zip)
+                </span>
+              </label>
+              <div className="relative">
+                <input
+                  id="vc-near"
+                  className="w2-input w-full pr-7"
+                  defaultValue="London, UK"
+                />
+                <span className="pointer-events-none absolute right-1.5 top-1/2 -translate-y-1/2 text-[8px] text-[#666]">
+                  ▼
+                </span>
+              </div>
+            </div>
+
+            <button className="w2-btn-search inline-flex items-center gap-1.5 self-end">
               <Search className="w-3.5 h-3.5" />
               Search
             </button>
