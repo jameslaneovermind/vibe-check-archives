@@ -36,11 +36,6 @@ export function ListingCard({ l, index }: { l: Listing; index: number }) {
         <div className="w2-photo w-[78px] h-[78px] overflow-hidden">
           <PixelIcon id={l.id} size={78} />
         </div>
-        {l.topPick && (
-          <div className="w2-burst" style={{ width: 44, height: 44, fontSize: 7 }}>
-            ⭐<br />TOP<br />PICK!
-          </div>
-        )}
         {l.suspended && (
           <div className="w2-suspended-banner" style={{ fontSize: 9, padding: "3px 2px" }}>
             ⚠ SUSPENDED ⚠
