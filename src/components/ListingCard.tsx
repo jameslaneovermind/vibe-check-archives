@@ -30,6 +30,8 @@ export function ListingCard({ l, index }: { l: Listing; index: number }) {
       style={{ background: l.sponsored ? "#FBF5E0" : "#FFFFFF" }}
     >
       <span className="w2-listnum">{index + 1}.</span>
+      {l.topPick && <EditorialPickBadge />}
+
 
       {/* Pixel-art icon */}
       <div className="relative shrink-0">
