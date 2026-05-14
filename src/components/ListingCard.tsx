@@ -115,3 +115,40 @@ export function ListingCard({ l, index }: { l: Listing; index: number }) {
     </div>
   );
 }
+
+function EditorialPickBadge() {
+  // 12-point starburst, muted gold, with a tiny white star centered.
+  const points: string[] = [];
+  const cx = 12;
+  const cy = 12;
+  const outer = 11;
+  const inner = 6.5;
+  const n = 12;
+  for (let i = 0; i < n * 2; i++) {
+    const r = i % 2 === 0 ? outer : inner;
+    const a = (Math.PI / n) * i - Math.PI / 2;
+    points.push(`${(cx + Math.cos(a) * r).toFixed(2)},${(cy + Math.sin(a) * r).toFixed(2)}`);
+  }
+  return (
+    <span
+      title="Editorial pick"
+      aria-label="Editorial pick"
+      className="inline-flex items-center justify-center align-middle"
+      style={{ width: 16, height: 16, marginLeft: 2, marginRight: -2 }}
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden>
+        <polygon
+          points={points.join(" ")}
+          fill="#D4940A"
+          stroke="#8A5E04"
+          strokeWidth="0.6"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M12 7.5 L13.1 10.4 L16.2 10.6 L13.8 12.5 L14.6 15.5 L12 13.9 L9.4 15.5 L10.2 12.5 L7.8 10.6 L10.9 10.4 Z"
+          fill="#FFFFFF"
+        />
+      </svg>
+    </span>
+  );
+}
